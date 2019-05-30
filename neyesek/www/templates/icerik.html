@@ -1,0 +1,32 @@
+<ion-view view-title="{{bilgi.adi}}">
+	<ion-content>
+
+
+		<div class="list">
+
+			<div class="item item-body">
+				<img class="full-image" style="border-radius: 15px" src="{{bilgi.resim}}">
+				<p>
+					Patatesleri iyice yıkayıp kabuklarıyla birlikte elma dilim şeklinde doğrayın ve
+					geniş bir kabın içine alın. Sarımsağı rendeleyin. Biberiye, kekik, tuz, karabiber
+					ve pul biber ekleyin. Üzerine zeytinyağı ilave ederek iyice karıştırın.
+				</p>
+				<div>
+					<button class="button button-block button-assertive" style="border-radius: 30px">
+						Gerekli Malzemeler
+					</button>
+				</div>
+				<div class="card text-center" ng-repeat="deneme in bilgi.malzemeler" style="border-radius: 30px">
+					<div class="item item-text-wrap">
+						{{deneme.malzeme}}
+					</div>
+				</div>
+
+				
+			</div>
+
+		</div>
+
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,38 @@
+<ion-view view-title="ne yesek?">
+	<ion-content>
+
+
+		<div class="list list-inset">
+			<label class="item item-input">
+				<i class="icon ion-search placeholder-icon"></i>
+				<input type="text" placeholder="Ne yemek istersin?" ng-model="ara.adi">
+			</label>
+		</div>
+
+		<div class="card {{sonuc.length > 0 ? '' : 'animated shake'}}" ng-if="ara.adi">
+			<div class="item item-text-wrap {{sonuc.length > 0 ? 'item-balanced' : 'item-assertive'}}">
+				{{sonuc.length > 0 ? '"' + ara.adi + '" kelimesine ait ' + sonuc.length + ' adet sonuç bulundu.' : 'Sonuç bulunamadı.'}}
+			</div>
+		</div>
+
+		<div class="list">
+			<div class="item item-body" ng-repeat="yemek in yemekler | filter:ara as sonuc">
+				<a href="#/app/icerik/{{yemek.id}}"><img style="border-radius: 15px" class="full-image" 
+					src="{{yemek.resim}}">
+				</a>
+
+				<!-- ng-class-odd / ng-class-even => ng-repeat tek/çift oldugunda bu classları ver -->
+				<div >
+					<a href="#/app/icerik/{{yemek.id}}" ng-repeat="kategori2 in yemek.kategori" class=""> 
+						<button class="button button-positive" ng-class-odd="'button-balanced'" style="border-radius: 30px; margin: 5px;" >
+							{{kategori2.kategoriAdi}}
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+
+
+
+	</ion-content>
+</ion-view>
